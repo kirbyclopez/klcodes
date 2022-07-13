@@ -1,12 +1,13 @@
 :root {
   --primary-color: #2a9d8f;
-  --secondary-color: #264653;
+  --secondary-color: #425e5e;
   --accent-color: #e76f51;
   --secondary-accent: #f4a261;
   --tertiary-acent: #e9c46a;
   --primary-dark: #2b7a78;
   --primary-light: #def2f1;
   --white: #feffff;
+  --primary-text: #333333;
 }
 
 body {
@@ -25,9 +26,9 @@ body {
 }
 
 .header1 {
-  color: var(--secondary-color);
+  color: var(--primary-text);
 }
 
 .subheading {
-  color: var(--secondary-color);
+  color: var(--white);
 }
