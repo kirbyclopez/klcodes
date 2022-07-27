@@ -14,21 +14,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.App {
-  background-color: var(--primary-color);
-  height: 100vh;
-  text-align: center;
-}
-
-.banner-logo {
-  width: 150px;
-}
-
-.header1 {
-  color: var(--primary-text);
-}
-
-.subheading {
-  color: var(--white);
-}

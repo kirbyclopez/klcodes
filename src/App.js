@@ -1,16 +1,20 @@
 import "./App.css";
-import logo from "./assets/images/klcodes-logo-white.png";
+import Navigation from "./components/Navigation";
+import HeroHeader from "./components/HeroHeader";
+import About from "./components/About";
+import CanDo from "./components/CanDo";
+import MyFooter from "./components/MyFooter";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <img src={logo} alt="klcodes" className="banner-logo" />
-      <h1 className="header1">Hey there! I'm Kirby!</h1>
-      <p className="subheading">
-        This portfolio is still under construction. Thank you for your patience.
-      </p>
+    <div>
+      <Navigation />
+      <HeroHeader />
+      <About />
+      <CanDo />
+      <MyFooter />
     </div>
   );
-}
+};
 
 export default App;
