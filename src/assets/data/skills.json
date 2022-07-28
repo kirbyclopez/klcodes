@@ -1,0 +1,21 @@
+[
+  { "name": "Bootstrap", "category": "frontend", "img": "bootstrap.png" },
+  { "name": "CSS", "category": "frontend", "img": "css.png" },
+  { "name": "Docker", "category": "other", "img": "docker.png" },
+  { "name": "Expo", "category": "frontend", "img": "reactjs.png" },
+  { "name": "Express JS", "category": "backend", "img": "expressjs.png" },
+  { "name": "Flask", "category": "backend", "img": "flask.png" },
+  { "name": "Git", "category": "other", "img": "git.png" },
+  { "name": "HTML", "category": "frontend", "img": "html.png" },
+  { "name": "Javascript", "category": "frontend", "img": "javascript.png" },
+  { "name": "MongoDB", "category": "backend", "img": "mongodb.png" },
+  { "name": "MySQL", "category": "backend", "img": "mysql.png" },
+  { "name": "Node JS", "category": "backend", "img": "nodejs.png" },
+  { "name": "PHP", "category": "backend", "img": "php.png" },
+  { "name": "Python", "category": "backend", "img": "python.png" },
+  { "name": "React JS", "category": "frontend", "img": "reactjs.png" },
+  { "name": "Redis", "category": "backend", "img": "redis.png" },
+  { "name": "Redux", "category": "frontend", "img": "redux.png" },
+  { "name": "Tailwind CSS", "category": "frontend", "img": "tailwindcss.png" },
+  { "name": "Typescript", "category": "backend", "img": "typescript.png" }
+]

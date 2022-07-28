@@ -4,7 +4,7 @@ import { ThemeContext } from "./ThemeContext";
 
 const Navigation = (props) => {
   const { theme, setTheme } = React.useContext(ThemeContext);
-  const links = ["home", "about", "projects", "skills", "contact"];
+  const links = ["home", "about", "skills", "projects", "contact"];
   const [section, setSection] = useState("home");
   const [navShow, setNavShow] = useState(false);
   const [navActive, setNavActive] = useState(false);
