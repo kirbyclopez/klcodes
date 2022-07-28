@@ -3,6 +3,8 @@ import Navigation from "./components/Navigation";
 import HeroHeader from "./components/HeroHeader";
 import About from "./components/About";
 import CanDo from "./components/CanDo";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 import MyFooter from "./components/MyFooter";
 
 const App = () => {
@@ -12,6 +14,8 @@ const App = () => {
       <HeroHeader />
       <About />
       <CanDo />
+      <Skills />
+      <Projects />
       <MyFooter />
     </div>
   );

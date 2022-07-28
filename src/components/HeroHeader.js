@@ -8,7 +8,7 @@ const HeroHeader = (props) => {
   return (
     <section
       id="home"
-      className="bg-gray-100 dark:bg-gray-700"
+      className="bg-indigo-50 dark:bg-gray-700"
       style={sectionStyle}
     >
       <div className="flex flex-col justify-center items-center h-screen min-h-max max-w-6xl mx-auto">

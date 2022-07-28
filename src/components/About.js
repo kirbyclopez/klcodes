@@ -3,14 +3,14 @@ import resume from "./../assets/docs/resume.pdf";
 
 const About = () => {
   return (
-    <section id="about" className="bg-white">
+    <section id="about" className="bg-white dark:bg-gray-800 dark:text-white">
       <div className="flex flex-row justify-around items-center max-w-6xl mx-auto py-10">
         <div className="">
           <img src={profile} alt="Profile" className="h-80 max-w-none" />
         </div>
         <div className="flex-col w-1/2">
           <h1 className="text-3xl font-semibold mb-6">About Me</h1>
-          <p className="text-justify mb-8">
+          <p className="text-justify font-light mb-8 dark:text-gray-300">
             I'm Kirby, from General Trias, Cavite, Philippines, a Full-Stack
             Developer with a background in the payroll service industry. I have
             a serious passion for coding expecially in web development. I've
