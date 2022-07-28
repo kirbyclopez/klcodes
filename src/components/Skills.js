@@ -17,7 +17,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="bg-indigo-50 dark:bg-gray-700 dark:text-white"
+      className="bg-gray-50 dark:bg-gray-700 dark:text-white"
     >
       <div className="flex flex-col max-w-5xl mx-auto py-10">
         <h1 className="text-3xl text-center font-semibold mb-6 relative after:w-[50px] after:h-[3px] after:bg-blue-500 after:absolute after:bottom-[-15px] after:left-[calc(50%-25px)]">
@@ -31,7 +31,7 @@ const Skills = () => {
                 className={
                   "text-xs cursor-pointer transition-colors duration-300 dark:text-white " +
                   (filt === filter
-                    ? "text-blue-500 pointer-events-none hover:text-sec"
+                    ? "text-blue-500 pointer-events-none hover:text-sec dark:text-blue-500"
                     : "")
                 }
                 onClick={(e) => {
@@ -52,7 +52,7 @@ const Skills = () => {
               return (
                 <div
                   key={index}
-                  className="relative shadow-md grid justify-items-center py-8 px-2 bg-white rounded-md transition-colors duration-300 dark:bg-gray-900"
+                  className="relative shadow-md grid justify-items-center py-8 px-2 bg-white rounded-md transition-colors duration-300 dark:bg-gray-800"
                 >
                   <img
                     src={image}

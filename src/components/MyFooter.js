@@ -2,7 +2,7 @@ import logo from "./../assets/images/klcodes-logo-primary.png";
 
 const MyFooter = () => {
   return (
-    <footer className="flex flex-row justify-center items-center py-4 dark:text-gray-400">
+    <footer className="flex flex-row justify-center items-center py-4 text-gray-400 bg-gray-800">
       <img src={logo} alt="klcodes Logo" className="w-8 mr-2" />
       <div>klcodes &copy; {2022}. All Rights Reserved</div>
     </footer>
