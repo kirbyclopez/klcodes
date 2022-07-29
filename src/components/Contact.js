@@ -11,14 +11,14 @@ const Contact = () => {
       id="projects"
       className="bg-gray-50 dark:bg-gray-700 dark:text-white"
     >
-      <div className="flex flex-col max-w-5xl mx-auto py-10 items-center">
+      <div className="flex flex-col max-w-5xl mx-auto py-10 items-center px-4">
         <h1 className="text-3xl text-center font-semibold mb-6 relative after:w-[50px] after:h-[3px] after:bg-blue-500 after:absolute after:bottom-[-15px] after:left-[calc(50%-25px)]">
           Contact Me
         </h1>
-        <h3 className="mt-6 text-lg font-semibold">
+        <h3 className="mt-6 text-lg font-semibold text-center">
           I'd love to hear from you. Drop me a message!
         </h3>
-        <form className="flex flex-col gap-4 w-[640px] mt-6">
+        <form className="flex flex-col gap-4 w-full max-w-[640px] mt-6">
           <div>
             <div className="mb-2 block">
               <Label htmlFor="name1" value="Name" />

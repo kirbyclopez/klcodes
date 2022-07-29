@@ -44,7 +44,7 @@ const Skills = () => {
             ))}
           </ul>
         </div>
-        <div className="grid grid-cols-6 gap-5 mt-10 md:grid-cols-5 sm:grid-cols-3 2sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-5 mt-10 xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 px-6 xl:px-0">
           {filteredTechs &&
             filteredTechs.map((tech, index) => {
               const image = require("./../assets/images/" + tech.img);

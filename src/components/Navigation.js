@@ -19,13 +19,13 @@ const Navigation = (props) => {
   return (
     <nav
       className={
-        "px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 " +
+        "px-2 sm:px-4 py-2.5 fixed z-20 top-0 left-0 right-0 " +
         (navActive
           ? "bg-white dark:bg-gray-600 border-b border-gray-50 dark:border-gray-700"
           : "bg-transparent dark:bg-transparent")
       }
     >
-      <div className="container flex flex-wrap justify-between items-center mx-auto max-w-6xl">
+      <div className="container flex justify-between items-center mx-auto max-w-6xl">
         <a href="#" className="flex items-center">
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="klcodes Logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
@@ -92,7 +92,7 @@ const Navigation = (props) => {
         </div>
         <div
           className={
-            "justify-between items-center w-full md:flex md:w-auto md:order-1 " +
+            "justify-between items-center w-full md:flex md:w-auto md:order-1 fixed top-[45px] left-0 right-0 md:relative md:top-auto " +
             (navShow ? "" : "hidden")
           }
           id="navbar-sticky"
@@ -105,6 +105,7 @@ const Navigation = (props) => {
                     href={"#" + link}
                     onClick={() => {
                       setSection(link);
+                      setNavShow(!navShow);
                     }}
                     className={
                       "block py-4 pr-4 pl-3 text-black bg-gray-50 rounded-lg hover:bg-gray-200 md:bg-transparent md:rounded-none md:hover:bg-transparent md:hover:border-b-2 md:hover:border-blue-500 md:text-black md:py-2 md:px-0 dark:text-white " +

@@ -5,7 +5,7 @@ const CanDo = () => {
         <h1 className="text-3xl text-center font-semibold mb-6 relative after:w-[50px] after:h-[3px] after:bg-blue-500 after:absolute after:bottom-[-15px] after:left-[calc(50%-25px)]">
           What Can I Do?
         </h1>
-        <div className="flex flex-row justify-around items-start w-full mt-6">
+        <div className="flex flex-col md:flex-row justify-around items-center md:items-start w-full mt-6">
           <div className="group flex flex-col items-center p-7 rounded-lg hover:shadow-xl transition-shadow duration-300 sm:max-w-[350px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
