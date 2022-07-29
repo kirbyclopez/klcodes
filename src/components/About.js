@@ -16,7 +16,7 @@ const About = () => {
           <p className="text-justify font-light mb-8 dark:text-gray-300">
             I'm Kirby, from General Trias, Cavite, Philippines, a Full-Stack
             Developer with a background in the payroll service industry. I have
-            a serious passion for coding expecially in web development. I've
+            a serious passion for coding especially in web development. I've
             been working in the web development industry for 5 years. I believe
             that learning never stops, which is especially true in the
             fast-moving ever-changing tech industry, that's why I'm continuously
