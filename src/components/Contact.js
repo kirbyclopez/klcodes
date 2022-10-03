@@ -4,21 +4,76 @@ import {
   Textarea,
   Button,
 } from "flowbite-react/lib/esm/components";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
+  const [isFocusedHead, setIsFocusedHead] = useState(false);
+  const [isFocusedSubHead, setIsFocusedSubHead] = useState(false);
+  const [isFocusedForm, setIsFocusedForm] = useState(false);
+  const [isFocusedSubHead2, setIsFocusedSubHead2] = useState(false);
+  const [isFocusedLinks, setIsFocusedLinks] = useState(false);
+
+  const { ref: headRef, inView: isVisibleHead } = useInView();
+  const { ref: subHeadRef, inView: isVisibleSubHead } = useInView();
+  const { ref: formRef, inView: isVisibleForm } = useInView();
+  const { ref: subHeadRef2, inView: isVisibleSubHead2 } = useInView();
+  const { ref: linksRef, inView: isVisibleLinks } = useInView();
+
+  useEffect(() => {
+    if (!isFocusedHead && isVisibleHead) setIsFocusedHead(true);
+  }, [isVisibleHead]);
+
+  useEffect(() => {
+    if (!isFocusedSubHead && isVisibleSubHead) setIsFocusedSubHead(true);
+  }, [isVisibleSubHead]);
+
+  useEffect(() => {
+    if (!isFocusedForm && isVisibleForm) setIsFocusedForm(true);
+  }, [isVisibleForm]);
+
+  useEffect(() => {
+    if (!isFocusedSubHead2 && isVisibleSubHead2) setIsFocusedSubHead2(true);
+  }, [isVisibleSubHead2]);
+
+  useEffect(() => {
+    if (!isFocusedLinks && isVisibleLinks) setIsFocusedLinks(true);
+  }, [isVisibleLinks]);
+
   return (
     <section
-      id="projects"
+      id="contact"
       className="bg-gray-50 dark:bg-gray-700 dark:text-white"
     >
-      <div className="flex flex-col max-w-5xl mx-auto py-10 items-center px-4">
-        <h1 className="text-3xl text-center font-semibold mb-6 relative after:w-[50px] after:h-[3px] after:bg-blue-500 after:absolute after:bottom-[-15px] after:left-[calc(50%-25px)]">
+      <div className="flex flex-col max-w-5xl mx-auto py-10 items-center px-4 overflow-hidden">
+        <h1
+          ref={headRef}
+          className={`text-3xl text-center font-semibold mb-6 relative after:w-[50px] after:h-[3px] after:bg-blue-500 after:absolute after:bottom-[-15px] after:left-[calc(50%-25px)] transition-all duration-1000 ease-in-out ${
+            isFocusedHead
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-28"
+          }`}
+        >
           Contact Me
         </h1>
-        <h3 className="mt-6 text-lg font-semibold text-center">
+        <h3
+          ref={subHeadRef}
+          className={`mt-6 text-lg font-semibold text-center transition-all duration-1000 ease-in-out ${
+            isFocusedHead
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-28"
+          }`}
+        >
           I'd love to hear from you. Drop me a message!
         </h3>
-        <form className="flex flex-col gap-4 w-full max-w-[640px] mt-6">
+        <form
+          ref={formRef}
+          className={`flex flex-col gap-4 w-full max-w-[640px] mt-6 transition-all duration-1000 ease-in-out ${
+            isFocusedForm
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-full"
+          }`}
+        >
           <div>
             <div className="mb-2 block">
               <Label htmlFor="name1" value="Name" />
@@ -59,8 +114,24 @@ const Contact = () => {
             <Button type="submit">Submit</Button>
           </div>
         </form>
-        <h3 className="mt-10 text-lg font-semibold">or contact me through</h3>
-        <div className="flex flex-row gap-10 mt-10">
+        <h3
+          ref={subHeadRef2}
+          className={`mt-10 text-lg font-semibold transition-all duration-1000 ease-in-out ${
+            isFocusedHead
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-28"
+          }`}
+        >
+          or contact me through
+        </h3>
+        <div
+          ref={linksRef}
+          className={`flex flex-row gap-10 mt-10 transition-all duration-1000 ease-in-out ${
+            isFocusedHead
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-28"
+          }`}
+        >
           <a href="tel:+63273584718" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"

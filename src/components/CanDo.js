@@ -1,12 +1,55 @@
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 const CanDo = () => {
+  const [isFocusedHead, setIsFocusedHead] = useState(false);
+  const [isFocusedSec1, setIsFocusedSec1] = useState(false);
+  const [isFocusedSec2, setIsFocusedSec2] = useState(false);
+  const [isFocusedSec3, setIsFocusedSec3] = useState(false);
+
+  const { ref: headRef, inView: isVisibleHead } = useInView();
+  const { ref: sec1Ref, inView: isVisibleSec1 } = useInView();
+  const { ref: sec2Ref, inView: isVisibleSec2 } = useInView();
+  const { ref: sec3Ref, inView: isVisibleSec3 } = useInView();
+
+  useEffect(() => {
+    if (!isFocusedHead && isVisibleHead) setIsFocusedHead(true);
+  }, [isVisibleHead]);
+
+  useEffect(() => {
+    if (!isFocusedSec1 && isVisibleSec1) setIsFocusedSec1(true);
+  }, [isVisibleSec1]);
+
+  useEffect(() => {
+    if (!isFocusedSec2 && isVisibleSec2) setIsFocusedSec2(true);
+  }, [isVisibleSec2]);
+
+  useEffect(() => {
+    if (!isFocusedSec3 && isVisibleSec3) setIsFocusedSec3(true);
+  }, [isVisibleSec3]);
+
   return (
     <section className="bg-white dark:bg-gray-800 dark:text-white">
-      <div className="flex flex-col max-w-6xl mx-auto py-10">
-        <h1 className="text-3xl text-center font-semibold mb-6 relative after:w-[50px] after:h-[3px] after:bg-blue-500 after:absolute after:bottom-[-15px] after:left-[calc(50%-25px)]">
+      <div className={`flex flex-col max-w-6xl mx-auto py-10`}>
+        <h1
+          ref={headRef}
+          className={`text-3xl text-center font-semibold mb-6 relative after:w-[50px] after:h-[3px] after:bg-blue-500 after:absolute after:bottom-[-15px] after:left-[calc(50%-25px)] transition-all duration-1000 ease-in-out ${
+            isFocusedHead
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-28"
+          }`}
+        >
           What Can I Do?
         </h1>
         <div className="flex flex-col md:flex-row justify-around items-center md:items-start w-full mt-6">
-          <div className="group flex flex-col items-center p-7 rounded-lg hover:shadow-xl transition-shadow duration-300 sm:max-w-[350px]">
+          <div
+            ref={sec1Ref}
+            className={`group flex flex-col items-center p-7 rounded-lg hover:shadow-xl sm:max-w-[350px] transition-all duration-1000 ease-in-out ${
+              isFocusedSec1
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-28"
+            }`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-500 duration-200"
@@ -34,7 +77,14 @@ const CanDo = () => {
               client's requirements and theme.
             </p>
           </div>
-          <div className="group flex flex-col items-center p-7 rounded-lg hover:shadow-xl transition-shadow duration-300 sm:max-w-[350px]">
+          <div
+            ref={sec2Ref}
+            className={`group flex flex-col items-center p-7 rounded-lg hover:shadow-xl sm:max-w-[350px] transition-all duration-1000 ease-in-out ${
+              isFocusedSec2
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-28"
+            }`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-500 duration-200"
@@ -58,7 +108,14 @@ const CanDo = () => {
               web applications.
             </p>
           </div>
-          <div className="group flex flex-col items-center p-7 rounded-lg hover:shadow-xl transition-shadow duration-300 sm:max-w-[350px]">
+          <div
+            ref={sec3Ref}
+            className={`group flex flex-col items-center p-7 rounded-lg hover:shadow-xl sm:max-w-[350px] transition-all duration-1000 ease-in-out ${
+              isFocusedSec3
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-28"
+            }`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-8 w-8 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-500 duration-200"

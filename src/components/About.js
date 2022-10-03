@@ -1,10 +1,27 @@
 import profile from "./../assets/images/profile.png";
 import resume from "./../assets/docs/resume.pdf";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 const About = () => {
+  const [isFocused, setIsFocused] = useState(false);
+  const { ref: divRef, inView: isVisible } = useInView();
+
+  useEffect(() => {
+    if (!isFocused && isVisible) setIsFocused(true);
+  }, [isVisible]);
+
   return (
-    <section id="about" className="bg-white dark:bg-gray-800 dark:text-white">
-      <div className="flex flex-col md:flex-row justify-around items-center max-w-6xl mx-auto py-10">
+    <section
+      id="about"
+      className="bg-white dark:bg-gray-800 dark:text-white overflow-hidden"
+    >
+      <div
+        className={`flex flex-col md:flex-row justify-around items-center max-w-6xl mx-auto py-10 transition-all duration-1000 ease-in-out ${
+          isFocused ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+        }`}
+        ref={divRef}
+      >
         <h1 className="text-3xl font-semibold mb-6 md:hidden">About Me</h1>
         <div className="">
           <img src={profile} alt="Profile" className="h-80 max-w-none" />
