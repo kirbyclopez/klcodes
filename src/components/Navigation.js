@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 import logo from "./../assets/images/klcodes-logo-primary.png";
 import { ThemeContext } from "./ThemeContext";
 
-const Navigation = (props) => {
+const Navigation = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);
   const links = ["home", "about", "skills", "projects", "contact"];
   const [section, setSection] = useState("home");
@@ -101,21 +102,24 @@ const Navigation = (props) => {
             {links &&
               links.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={"#" + link}
+                  <Link
+                    to={link}
                     onClick={() => {
                       setSection(link);
                       setNavShow(!navShow);
                     }}
                     className={
-                      "block py-4 pr-4 pl-3 text-black bg-gray-50 rounded-lg hover:bg-gray-200 md:bg-transparent md:rounded-none md:hover:bg-transparent md:hover:border-b-2 md:hover:border-blue-500 md:text-black md:py-2 md:px-0 dark:text-white " +
+                      "block py-4 pr-4 pl-3 text-black bg-gray-50 rounded-lg hover:bg-gray-200 md:bg-transparent md:rounded-none md:hover:bg-transparent md:hover:border-b-2 md:hover:border-blue-500 md:text-black md:py-2 md:px-0 dark:text-white cursor-pointer " +
                       (section === link
                         ? "md:border-b-2 md:border-blue-500 md:text-blue-500 md:dark:border-blue-200 md:dark:text-blue-200"
                         : "")
                     }
+                    spy={true}
+                    smooth={true}
+                    offset={-50}
                   >
                     {link.toUpperCase()}
-                  </a>
+                  </Link>
                 </li>
               ))}
           </ul>

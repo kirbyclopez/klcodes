@@ -59,9 +59,9 @@ const Contact = () => {
         <h3
           ref={subHeadRef}
           className={`mt-6 text-lg font-semibold text-center transition-all duration-1000 ease-in-out ${
-            isFocusedHead
+            isFocusedSubHead
               ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-28"
+              : "opacity-0 translate-y-16"
           }`}
         >
           I'd love to hear from you. Drop me a message!
@@ -117,7 +117,7 @@ const Contact = () => {
         <h3
           ref={subHeadRef2}
           className={`mt-10 text-lg font-semibold transition-all duration-1000 ease-in-out ${
-            isFocusedHead
+            isFocusedSubHead2
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-28"
           }`}
@@ -127,9 +127,9 @@ const Contact = () => {
         <div
           ref={linksRef}
           className={`flex flex-row gap-10 mt-10 transition-all duration-1000 ease-in-out ${
-            isFocusedHead
+            isFocusedLinks
               ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-28"
+              : "opacity-0 translate-y-14"
           }`}
         >
           <a href="tel:+63273584718" target="_blank">
