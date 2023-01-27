@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import portfolioappimg from "./../assets/images/portfolioapp.jpg";
 import calculatorappimg from "./../assets/images/calculatorapp.jpg";
+import aircraftappimg from "./../assets/images/aircraftapp.jpg";
 import CarouselItem from "./CarouselItem";
 
 const Projects = () => {
@@ -56,6 +57,10 @@ const Projects = () => {
               imgSrc={calculatorappimg}
               linkDemo="https://calculator-react.klcodes.com/"
               linkSrc="https://github.com/kirbyclopez/calculator-react-app"
+            />
+            <CarouselItem
+              appName="Aircraft Calculator App"
+              imgSrc={aircraftappimg}
             />
           </Carousel>
         </div>
