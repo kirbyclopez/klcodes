@@ -98,7 +98,7 @@ const Navigation = () => {
           }
           id="navbar-sticky"
         >
-          <ul className="flex flex-col mt-4 bg-gray-50 rounded-lg border border-gray-100 md:border-0 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <ul className="flex flex-col mt-4 bg-gray-50 dark:bg-gray-600 rounded-lg border border-gray-100 dark:border-gray-600 md:border-0 md:bg-transparent md:dark:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             {links &&
               links.map((link, index) => (
                 <li key={index}>
@@ -109,7 +109,7 @@ const Navigation = () => {
                       setNavShow(!navShow);
                     }}
                     className={
-                      "block py-4 pr-4 pl-3 text-black bg-gray-50 rounded-lg hover:bg-gray-200 md:bg-transparent md:rounded-none md:hover:bg-transparent md:hover:border-b-2 md:hover:border-blue-500 md:text-black md:py-2 md:px-0 dark:text-white cursor-pointer " +
+                      "block py-4 pr-4 pl-3 text-black bg-gray-50 dark:bg-gray-600 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 md:bg-transparent md:dark:bg-transparent md:rounded-none md:hover:bg-transparent md:hover:border-b-2 md:hover:border-blue-500 md:text-black md:py-2 md:px-0 dark:text-white cursor-pointer " +
                       (section === link
                         ? "md:border-b-2 md:border-blue-500 md:text-blue-500 md:dark:border-blue-200 md:dark:text-blue-200"
                         : "")

@@ -14,19 +14,19 @@ const CanDo = () => {
 
   useEffect(() => {
     if (!isFocusedHead && isVisibleHead) setIsFocusedHead(true);
-  }, [isVisibleHead]);
+  }, [isFocusedHead, isVisibleHead]);
 
   useEffect(() => {
     if (!isFocusedSec1 && isVisibleSec1) setIsFocusedSec1(true);
-  }, [isVisibleSec1]);
+  }, [isFocusedSec1, isVisibleSec1]);
 
   useEffect(() => {
     if (!isFocusedSec2 && isVisibleSec2) setIsFocusedSec2(true);
-  }, [isVisibleSec2]);
+  }, [isFocusedSec2, isVisibleSec2]);
 
   useEffect(() => {
     if (!isFocusedSec3 && isVisibleSec3) setIsFocusedSec3(true);
-  }, [isVisibleSec3]);
+  }, [isFocusedSec3, isVisibleSec3]);
 
   return (
     <section className="bg-white dark:bg-gray-800 dark:text-white">
@@ -103,9 +103,9 @@ const CanDo = () => {
               Web Development
             </h3>
             <p className="text-lg font-light text-center leading-6 dark:text-gray-300">
-              I can develop a web applications that satisfies the requirements
-              of the client ranging from simple single static page to complex
-              web applications.
+              I can develop a web application that satisfies the requirements of
+              the client ranging from simple single static page to complex web
+              applications.
             </p>
           </div>
           <div
