@@ -7,10 +7,12 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import MyFooter from "./components/MyFooter";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <div>
+      <Toaster position="top-right" reverseOrder={true} />
       <Navigation />
       <HeroHeader />
       <About />

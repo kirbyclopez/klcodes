@@ -5,6 +5,7 @@ import {
   Button,
 } from "flowbite-react/lib/esm/components";
 import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
@@ -13,6 +14,12 @@ const Contact = () => {
   const [isFocusedForm, setIsFocusedForm] = useState(false);
   const [isFocusedSubHead2, setIsFocusedSubHead2] = useState(false);
   const [isFocusedLinks, setIsFocusedLinks] = useState(false);
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const { ref: headRef, inView: isVisibleHead } = useInView();
   const { ref: subHeadRef, inView: isVisibleSubHead } = useInView();
@@ -39,6 +46,35 @@ const Contact = () => {
   useEffect(() => {
     if (!isFocusedLinks && isVisibleLinks) setIsFocusedLinks(true);
   }, [isVisibleLinks]);
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClear = () => {
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (form.name !== "" && form.email !== "" && form.message !== "") {
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      toast.success("Message successfully sent.");
+    }
+  };
 
   return (
     <section
@@ -73,6 +109,7 @@ const Contact = () => {
               ? "opacity-100 translate-x-0"
               : "opacity-0 translate-x-full"
           }`}
+          onSubmit={handleSubmit}
         >
           <div>
             <div className="mb-2 block">
@@ -83,6 +120,9 @@ const Contact = () => {
               type="text"
               placeholder="Enter your name"
               required={true}
+              name="name"
+              value={form.name}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -94,6 +134,9 @@ const Contact = () => {
               type="email"
               placeholder="Enter your email address"
               required={true}
+              name="email"
+              value={form.email}
+              onChange={handleChange}
             />
           </div>
           <div id="textarea">
@@ -105,10 +148,13 @@ const Contact = () => {
               placeholder="Leave a message..."
               required={true}
               rows={4}
+              name="message"
+              value={form.message}
+              onChange={handleChange}
             />
           </div>
           <div className="flex flex-row gap-2 justify-end">
-            <Button type="button" color="light">
+            <Button type="button" color="light" onClick={handleClear}>
               Clear
             </Button>
             <Button type="submit">Submit</Button>
