@@ -2,6 +2,7 @@ import { Carousel } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import portfolioappimg from "./../assets/images/portfolioapp.jpg";
+import listitappimg from "./../assets/images/listitapp.jpg";
 import calculatorappimg from "./../assets/images/calculatorapp.jpg";
 import aircraftappimg from "./../assets/images/aircraftapp.jpg";
 import CarouselItem from "./CarouselItem";
@@ -51,6 +52,12 @@ const Projects = () => {
               imgSrc={portfolioappimg}
               linkDemo="https://www.klcodes.com/"
               linkSrc="https://github.com/kirbyclopez/klcodes"
+            />
+            <CarouselItem
+              appName="List It"
+              imgSrc={listitappimg}
+              linkDemo="https://list-it.klcodes.com/"
+              linkSrc="https://github.com/kirbyclopez/list-it-app"
             />
             <CarouselItem
               appName="Calculator App"
